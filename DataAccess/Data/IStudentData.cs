@@ -1,7 +1,7 @@
 ﻿using DataAccess.Models;
 
 namespace DataAccess.Data;
-public interface IUserData
+public interface IStudentData
 {
     Task DeleteAllStudent();
     Task<IDictionary<string, IEnumerable<Student>>> GetStudentsAndSort();

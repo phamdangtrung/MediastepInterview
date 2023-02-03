@@ -7,17 +7,17 @@ using System.Diagnostics;
 namespace MediaStepUI.Controllers;
 public class HomeController : Controller
 {
-    private readonly IUserData _userData;
+    private readonly IStudentData _studentData;
 
-    public HomeController(IUserData userData)
+    public HomeController(IStudentData studentData)
     {
-        _userData = userData;
+        _studentData = studentData;
     }
 
     [HttpGet]
     public async Task<IActionResult> Index()
     {
-        var students = await _userData.GetStudentsAndSort();
+        var students = await _studentData.GetStudentsAndSort();
         IndexViewModel viewModel = new();
 
         viewModel.Top = students["top"];
@@ -51,7 +51,7 @@ public class HomeController : Controller
             newStudentList.AddLast(new Student { FullName = student.FullName, DateOfBirth = student.DateOfBirth });
         }
 
-        await _userData.InsertBulkStudents(newStudentList.AsEnumerable());
+        await _studentData.InsertBulkStudents(newStudentList.AsEnumerable());
         TempData["Message"] = "Ok";
         return View();
     }

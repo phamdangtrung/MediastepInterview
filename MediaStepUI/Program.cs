@@ -4,7 +4,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<ISqlDataAccess, SqlDataAccess>();
-builder.Services.AddScoped<IUserData, UserData>();
+builder.Services.AddScoped<IStudentData, StudentData>();
 
 var app = builder.Build();
 
