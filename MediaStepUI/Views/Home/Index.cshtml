@@ -1,0 +1,81 @@
+﻿@model MediaStepUI.ViewModels.HomeViewModels.IndexViewModel
+@{
+    int counter = 1;
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Clink Create on the navigation bar to create students</p>
+</div>
+
+<div>
+    <table class="table table-light">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Full Name</th>
+                <th scope="col">Date Of Birth</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model.Top)
+            {
+                <tr>
+                    <th scope="row">@counter</th>
+                    <td>@item.FullName</td>
+                    <td>@item.DateOfBirth.ToString("dd-MMM-yyyy")</td>
+                </tr>
+                counter++;
+            }
+        </tbody>
+
+        <thead>
+            <tr>
+                <th scope="col" colspan="3" style="text-align: center;">Others</th>
+            </tr>
+        </thead>
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Full Name</th>
+                <th scope="col">Date Of Birth</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model.Middle)
+        {
+            <tr>
+                <th scope="row">@counter</th>
+                <td>@item.FullName</td>
+                    <td>@item.DateOfBirth.ToString("dd-MMM-yyyy")</td>
+            </tr>
+            counter++;
+        }
+        </tbody>
+
+        <thead>
+            <tr>
+                <th scope="col" colspan="3" style="text-align: center;">Others</th>
+            </tr>
+        </thead>
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Full Name</th>
+                <th scope="col">Date Of Birth</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Bottom)
+            {
+                <tr>
+                    <th scope="row">@counter</th>
+                    <td>@item.FullName</td>
+                    <td>@item.DateOfBirth.ToString("dd-MMM-yyyy")</td>
+                </tr>
+                counter++;
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,36 @@
+﻿@model MediaStepUI.ViewModels.HomeViewModels.CreateViewModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+@if (TempData["Message"] is not null)
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["Message"].ToString()
+    </div>
+}
+
+<form asp-controller="Home" asp-action="Create" method="post">
+    @for(int i = 0; i < 30; i++)
+    {
+        int id = i + 1;
+        <h4>Student #@id</h4>
+        <div class="form-control m-sm-3">
+            <div class="form-group row m-sm-1">
+                <label asp-for="@Model.Students[i].FullName" class="col-sm-2 col-form-label">Full name</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" asp-for="@Model.Students[i].FullName" placeholder="Enter full name (minimum 2 characters)" required>
+                </div>
+            </div>
+            <div class="form-group row m-sm-1">
+                <label asp-for="@Model.Students[i].DateOfBirth" class="col-sm-2 col-form-label">Date Of Birth</label>
+                <div class="col-sm-10">
+                    <input type="date" class="form-control" asp-for="@Model.Students[i].DateOfBirth" id="inputPassword" required>
+                </div>
+            </div>
+        </div>
+    }
+    <input class="btn btn-primary" type="submit" value="Submit">
+</form>
