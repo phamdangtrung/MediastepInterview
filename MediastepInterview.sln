@@ -5,9 +5,9 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MediaStepDB", "MediaStepDB\MediaStepDB.sqlproj", "{9526D15A-AF3F-4B65-8EDA-A9AE1FBF06E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{27683799-89FD-4D4F-BCC0-D68E1CFA03D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\DataAccess.csproj", "{27683799-89FD-4D4F-BCC0-D68E1CFA03D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaStepUI", "MediaStepUI\MediaStepUI.csproj", "{46846DC6-F28B-40D1-8681-331BA557BA9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediaStepUI", "MediaStepUI\MediaStepUI.csproj", "{46846DC6-F28B-40D1-8681-331BA557BA9E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
